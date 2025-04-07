@@ -25,7 +25,7 @@
     .container {
       width: 100%;
       max-width: 700px;
-      height: 820px;
+      height: 920px;
       background-color: #1e1e1e;
       padding: 20px;
       border-radius: 12px;
@@ -111,6 +111,40 @@
       height: auto;
       border-radius: 8px;
     }
+
+    .profile-container {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+        .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      background-color: #444;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .profile-username {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .extra-input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      position: absolute;
+      left: -300px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   </style>
 </head>
 
@@ -132,12 +166,22 @@
       "<span id="quote-text">Your custom text here...</span>"
     </div>
 
+    <div class="profile-container">
+      <div class="profile-pic" id="profilePic" style="background-image: url('src/default-profile.png');"></div>
+      <div class="profile-username" id="profileUsername">$username</div>
+    </div>
+
     <div class="input-container">
       <input type="text" id="quoteInput" placeholder="Enter new text..." oninput="updateQuote()">
 
       <div class="gif-container" onclick="openPage()">
         <img src="src/328347973-5794a4e1-292f-46cc-af3a-b33a27a2f15e.gif" alt="Vendicated">
       </div>
+    </div>
+
+    <div class="extra-input-container">
+      <input type="text" id="profilePicUrl" placeholder="Profile Picture Image URL" oninput="updateProfilePic()">
+      <input type="text" id="usernameInput" placeholder="Username" oninput="updateUsername()">
     </div>
 
     <div class="footer">
@@ -153,6 +197,16 @@
 
     function openPage() {
       window.open("https://github.com/vendicatedcore", "_blank");
+    }
+
+    function updateProfilePic() {
+      const profilePicUrl = document.getElementById('profilePicUrl').value;
+      document.getElementById('profilePic').style.backgroundImage = `url('${profilePicUrl}')`;
+    }
+
+    function updateUsername() {
+      const username = document.getElementById('usernameInput').value;
+      document.getElementById('profileUsername').textContent = username || '$username';
     }
   </script>
 
