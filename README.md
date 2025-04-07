@@ -1,8 +1,9 @@
 # Awards
 A silly HTML page dedicated for personal use to generate posters for stupid things said on my server
 
+![image](https://github.com/user-attachments/assets/24d198fd-9971-44cc-92ea-9dc643db0378)
 
-![image](https://github.com/user-attachments/assets/f6dd4df2-0d25-4b86-994a-bc5c126cd4ef)
+
+![image](https://github.com/user-attachments/assets/86c31a19-a02b-497e-98e8-62491517ea64)
 
 
-![image](https://github.com/user-attachments/assets/a9f8f98c-1555-4ab6-be4c-08df97263993)
