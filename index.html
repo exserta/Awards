@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>D V R K Z Awards 2025</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
     body {
       background-color: #121212;
       color: #fff;
@@ -46,7 +48,6 @@
       z-index: 2;
       position: relative;
       right: 33px;
-
     }
 
     .first {
@@ -72,6 +73,8 @@
       right: -300px;
       top: 50%;
       transform: translateY(-50%);
+      flex-direction: column;
+      align-items: center;
     }
 
     input[type="text"] {
@@ -96,41 +99,63 @@
       height: auto;
       filter: brightness(0) invert(1);
     }
+
+    .gif-container {
+      margin-top: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .gif-container img {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+    }
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <img src="src/discord.png" alt="Discord Logo" class="discord-logo">
-  <div class="header">
-    <div class="first">1ˢᵗ</div>
-    <img src="src/laurel.png" alt="Laurel" class="laurel">
-  </div>
-  <div class="quote">
-    <div>You are</div>
-    <div><span style="font-weight: bold;">THE FIRST PERSON</span></div>
-    <div>to say such vile thing on Discord</div>
+  <div class="container">
+    <img src="src/discord.png" alt="Discord Logo" class="discord-logo">
+    <div class="header">
+      <div class="first">1ˢᵗ</div>
+      <img src="src/laurel.png" alt="Laurel" class="laurel">
+    </div>
+    <div class="quote">
+      <div>You are</div>
+      <div><span style="font-weight: bold;">THE FIRST PERSON</span></div>
+      <div>to say such vile thing on Discord</div>
+    </div>
+
+    <div class="quote">
+      "<span id="quote-text">Your custom text here...</span>"
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="quoteInput" placeholder="Enter new text..." oninput="updateQuote()">
+
+      <div class="gif-container" onclick="openPage()">
+        <img src="src/328347973-5794a4e1-292f-46cc-af3a-b33a27a2f15e.gif" alt="Vendicated">
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>DVRKZ Awards <span>&#169;</span> 2025</div>
+    </div>
   </div>
 
-  <div class="quote">
-    "<span id="quote-text">Your custom text here...</span>"
-  </div>
+  <script>
+    function updateQuote() {
+      const quoteInput = document.getElementById('quoteInput').value;
+      document.getElementById('quote-text').textContent = quoteInput || 'Your custom text here...';
+    }
 
-  <div class="input-container">
-    <input type="text" id="quoteInput" placeholder="Enter new text..." oninput="updateQuote()">
-  </div>
-
-  <div class="footer">
-    <div>DVRKZ Awards <span>&#169;</span> 2025</div>
-  </div>
-</div>
-
-<script>
-  function updateQuote() {
-    const quoteInput = document.getElementById('quoteInput').value;
-    document.getElementById('quote-text').textContent = quoteInput || 'Your custom text here...';
-  }
-</script>
+    function openPage() {
+      window.open("https://github.com/vendicatedcore", "_blank");
+    }
+  </script>
 
 </body>
+
 </html>
